@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NGNM Legal Exposé - Tom Marr</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #eee;
+      padding: 4px 0px; 
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #ff3333;
+      border-bottom: 2px solid #ff3333;
+      padding-bottom: 5px;
+    }
+    p {
+      line-height: 1.6;
+    }
+    .quote {
+      font-style: italic;
+      color: #ccc;
+      margin: 20px 0;
+    }
+    .highlight {
+      color: #fff;
+      background: #cc0000;
+      padding: 5px 10px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    .cta {
+      background-color: #222;
+      border: 1px solid #ff3333;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    a {
+      color: #ff3333;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    form {
+      margin-top: 30px;
+    }
+    input, textarea, select, button {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      background-color: #222;
+      border: 1px solid #555;
+      color: #fff;
+    }
+    button {
+      background-color: #cc0000;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ff3333;
+    }
+  </style>
+</head>
+<body>
+  <h1>NGNM Exposé: The Truth About Tom Marr</h1>
+  <p>In July 2025, I resigned from my role as Second-in-Charge at Darfield Farm in Darfield, due to targeted bullying, toxic leadership, and emotional abuse under manager Tom Marr.</p>
+  <p>But that wasn't the end. After I left, Tom fabricated a post-resignation firing, spreading false allegations to damage my name, my housing, and my future.</p>
+  <p class="quote">"This wasn't just misconduct – it was a deliberate smear campaign designed to silence me. But I won't be silenced."</p>
+
+  <h2>What Happened?</h2>
+  <ul>
+    <li>Resigned due to ongoing abuse and mental distress</li>
+    <li>Tom Marr made false claims AFTER resignation</li>
+    <li>Police became involved over fake accusations</li>
+    <li>Resulted in housing loss and extreme stress</li>
+    <li>Career temporarily derailed – but not destroyed</li>
+  </ul>
+  <p>I’ve launched a full Employment Relations Authority (ERA) case, seeking over $20,000 in damages for the harm caused.</p>
+
+  <h2>Why It Matters</h2>
+  <p>This isn’t just about me. It’s about hundreds of rural workers who are being mistreated, bullied, and discarded without protection or justice.</p>
+  <p class="highlight">NGNM Enterprises Ltd stands as a wall between workers and the wolves.</p>
+
+  <div class="cta">
+    <h2>Submit Your Story</h2>
+    <p>Have you experienced abuse under rural management? Submit your case for our upcoming <strong>Wall of Shame</strong> page. Your story deserves to be heard.</p>
+  </div>
+
+  <form id="shameForm">
+    <input type="text" id="name" placeholder="Your Name (optional)" />
+    <input type="text" id="farm" placeholder="Farm/Manager Name (required)" required />
+    <input type="text" id="location" placeholder="Location (required)" required />
+    <textarea id="story" placeholder="What Happened (required)" required></textarea>
+    <input type="text" id="year" placeholder="Year(s) of Incident (optional)" />
+    <input type="text" id="witness" placeholder="Witness Name(s) (optional)" />
+    <select id="reported">
+      <option value="no">Has this been reported before? No</option>
+      <option value="yes">Yes</option>
+    </select>
+    <input type="email" id="contact" placeholder="Your Email (for NGNM follow-up)" />
+    <button type="button" onclick="saveLocally()">Save My Story Locally</button>
+  </form>
+
+  <h2>Full Press Kit</h2>
+  <p><a href="/downloads/NGNM_Legal_Press_Kit_ASCII_Aug2025.pdf" target="_blank">Click here to read the full press release (PDF)</a></p>
+  <p class="quote">"We are the system now. And the system is watching. TTMFCD."</p>
+
+  <script>
+    function saveLocally() {
+      const data = {
+        name: document.getElementById('name').value,
+        farm: document.getElementById('farm').value,
+        location: document.getElementById('location').value,
+        story: document.getElementById('story').value,
+        year: document.getElementById('year').value,
+        witness: document.getElementById('witness').value,
+        reported: document.getElementById('reported').value,
+        contact: document.getElementById('contact').value,
+        timestamp: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `NGNM_Report_${Date.now()}.json`;
+      a.click();
+    }
+  </script>
+</body>

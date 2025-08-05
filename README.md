@@ -1,1 +1,0 @@
-# ngnm_wall_of_shame-
